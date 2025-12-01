@@ -15,23 +15,115 @@
     line-height: 1.6;
   }
   header {
-    background: white;
-    padding: 3rem 1.5rem;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
+  background: url('images/HollywoodSign.jpg') no-repeat center center; 
+  background-size: cover; 
+  padding: 2.5rem 2rem; /* More padding for balance */
+  text-align: left;   
+  border-bottom: 1px solid #ddd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+/* Full-width image section */
+.image-section {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f9;
+  overflow: hidden;
+}
+
+.image-container img {
+  height: 500px;        
+  width: auto;              
+  opacity: 0;  
+  transition: transform 1s ease, opacity 1s ease;
+  object-fit: contain; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  gap: 2rem;              
+  width: 100%;
+}
+
+.from-left {
+  transform: translateX(-20px);
+}
+
+.from-right {
+  transform: translateX(20px);
+}
+
+.from-bottom {
+  transform: translateY(20px);
+}
+
+
+.image-container img.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+
+header h1 {
+  font-size: 6rem;
+  margin: 0.2rem 0;
+}
+/* Project card refinement */
+.project-card {
+  border-left: 6px solid #4a90e2; /* accent color */
+}
+
+.project-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+.project-version {
+  background: #eef3ff;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.8rem 0 1rem 0;
+  font-size: 0.95rem;
+  color: #2a3f85;
+}
+
+.project-list {
+  padding-left: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+.project-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+
+header p {
+  font-size: 2.3rem;
+  margin: 0;
+}
   h2 {
     margin-top: 2rem;
-    font-size: 1.8rem;
+    font-size: 2.0rem;
   }
+  
   .container {
-    max-width: 850px;
+    background: url('images/beach_shore_wave-wallpaper-2560x1440.jpg') no-repeat center center; 
+    background-size: cover; 
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .section {
     background: white;
@@ -53,32 +145,68 @@
 </head>
 <body>
   <header>
-    <h1>R. W.</h1>
-    <p>Physics @ UCLA · Cloud Security · Applied Machine Learning · Tennis</p>
+    <h1>Ruhan Waghmare</h1>
+    <p>Physics @ UCLA · Cloud Security · Machine Learning · Tennis</p>
   </header>
-
+  <div class="image-section">
+    <div class="image-container">
+      <img src="images/IMG_1864.jpg" alt="Picture 1" class="from-left">
+      <img src="images/IMG_7097.JPG" alt="Picture 2" class="from-bottom">
+      <img src="images/IMG_8153.JPG" alt="Picture 3" class="from-right">
+    </div>
+  </div>
   <div class="container">
-
-    <div class="section">
+    <div class="section project-card">
       <h2>About Me</h2>
-      <p>
-        I'm a UCLA physics graduate with experience across cloud security posture management (CSPM), applied machine learning, and full‑stack development. I enjoy building systems that blend rigorous analytical thinking with real‑world impact — from securing cloud resources at scale to translating sign language using computer vision models. Outside of technical work, I'm an avid tennis player.
+      <p class="project-subtitle">
+        Physics is the fundamental study of the world - so technically I should know everything right? Being far from the truth would be an understatement, but what physics has taught me is how to attempt the most challenging problems with an analytical mindset and follow my curiosity - whether it leads to new technology or place to travel. I hope to use my experiences to innovate in a way that gives back to the community.
       </p>
     </div>
-    <div class="section">
-      <h2>Highlighted Projects</h2>
-      <ul>
-        <li><strong>Sign Language Translator:</strong> Built a real‑time ASL translation system using computer vision, MediaPipe hand‑pose estimation, and sequence classification models to output text predictions.</li>
-        <li><strong>CSPM Automation Work:</strong> Developed detections, audits, and policy logic to identify misconfigurations across cloud environments; contributed to scripts, pipelines, and workflows for secure resource baselining.</li>
-        <li><strong>Physics + Data Science:</strong> Leveraged my physics background and data science minor to apply statistical modeling, simulations, and signal processing to complex analytical problems.</li>
+    <div class="section project-card">
+      <h2>Current Project: Sign Language Translator</h2>
+    
+      <p class="project-subtitle">
+        Built a real-time ASL translator using computer vision to convert hand-pose sequences into English text.
+      </p>
+    
+      <p class="project-version">Current Version: <strong>2025-11-30</strong></p>
+    
+      <ul class="project-list">
+        <li>MediaPipe used for extracting 3D hand landmarks</li>
+        <li>Cloud-hosted inference API deployed on AWS EC2</li>
+        <li>Currently supports individual letters; full-word recognition coming next</li>
       </ul>
     </div>
-    <div class="section">
-      <h2>Interests</h2>
+    <div class="section project-card">
+      <h2>An Achievement From The Week</h2>
+      <p class="project-subtitle">
+        Finally hit a milestone when my left leg reached 80% of the strength of the right. My ACL recovery pushed me mentally and physically, and I've fought to rebuild, rethink my limits, and stay committed even when progress was hard to see. It’s one of the accomplishments I’m most proud of. After a long year of recovery the storm's almost over. 
+      </p>
+    
+    </div>
+    <div class="section project-card">
+      <h2>Contact</h2>
       <p>
-        Cloud security · ML/AI safety · Computer vision · Distributed systems · Tennis · Data‑driven research · Physics-informed modeling
+        To talk about tech or tennis please reach out at rwaghmare4212@gmail.com
       </p>
     </div>
   </div>
+  <script>
+    const images = document.querySelectorAll('.image-container img');
+    
+    function handleScroll() {
+      const triggerBottom = window.innerHeight * 0.9; // trigger slightly earlier
+      images.forEach(img => {
+        const imgTop = img.getBoundingClientRect().top;
+        if (imgTop < triggerBottom) {
+          img.classList.add('show');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll); // trigger on load if visible
+    </script>
+    
 </body>
 </html>
