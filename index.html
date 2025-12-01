@@ -66,9 +66,6 @@
         I'm a UCLA physics graduate with experience across cloud security posture management (CSPM), applied machine learning, and full‑stack development. I enjoy building systems that blend rigorous analytical thinking with real‑world impact — from securing cloud resources at scale to translating sign language using computer vision models. Outside of technical work, I'm an avid tennis player.
       </p>
     </div>
-    <div>
-      <img src="{{ url_for('video_prediction') }}" alt="Video Stream">
-    </div>
     <div class="section">
       <h2>Highlighted Projects</h2>
       <ul>
@@ -107,7 +104,7 @@
             .catch(err => console.error("Webcam error:", err));
     
         // Connect to Socket.IO server
-        const socket = io("http://ec2-3-14-3-38.us-east-2.compute.amazonaws.com", { transports: ["websocket"] });
+        const socket = io("wss://ec2-3-14-3-38.us-east-2.compute.amazonaws.com", { transports: ["websocket"] });
     
         socket.on('connect', () => {
             console.log("Connected to Socket.IO server with ID:", socket.id);
