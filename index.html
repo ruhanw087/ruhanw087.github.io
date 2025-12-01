@@ -6,6 +6,13 @@
 <title>R. W. — Portfolio</title>
 
 <style>
+
+video {
+  display: block;
+  margin: 2rem auto;   /* centers horizontally */
+  border-radius: 12px; /* optional, looks nice */
+}
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -106,6 +113,15 @@ header h1 {
   line-height: 1.5;
 }
 
+.hello-text {
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", cursive;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+  letter-spacing: 2px;
+}
 
 header p {
   font-size: 2.3rem;
@@ -176,6 +192,28 @@ header p {
         <li>Cloud-hosted inference API deployed on AWS EC2</li>
         <li>Currently supports individual letters; full-word recognition coming next</li>
       </ul>
+
+      <div class="hello-text">Hello</div>
+<video autoplay width="640" height="360" poster="__POSTER__.jpg" controls="controls">
+  <source src="videos/Tranlsator.mp4" type="video/mp4" />
+  <source src="videos/Tranlsator.webm" type="video/webm" />
+  <object width="640" height="375" type="video/quicktime" data="__VIDEO__.mp4">
+  <param name="src" value="__VIDEO__.mp4" />
+  <param name="autoplay" value="false" />
+  <param name="showlogo" value="false" />
+  <object width="640" height="380" type="application/x-shockwave-flash"
+      data="__FLASH__.swf?image=__POSTER__.jpg&amp;file=__VIDEO__.mp4">
+      <param name="movie" value="__FLASH__.swf?image=__POSTER__.jpg&amp;file=__VIDEO__.mp4" />
+      <img src="__POSTER__.jpg" width="640" height="360" />
+      <p>
+          <strong>No video playback capabilities detected.</strong>
+          Why not try to download the file instead?<br />
+          <a href="__VIDEO__.mp4">MPEG4 / H.264 “.mp4” (Windows / Mac)</a> |
+      </p>
+      </object>
+  </object>
+</video>
+
     </div>
     <div class="section project-card">
       <h2>An Achievement From The Week</h2>
@@ -187,7 +225,7 @@ header p {
     <div class="section project-card">
       <h2>Contact</h2>
       <p>
-        To talk about tech or tennis please reach out at rwaghmare4212@gmail.com
+        To talk about tech or tennis please reach out at rwaghmare4212@gmail.com or www.linkedin.com/in/ruhanwaghmare
       </p>
     </div>
   </div>
@@ -195,7 +233,7 @@ header p {
     const images = document.querySelectorAll('.image-container img');
     
     function handleScroll() {
-      const triggerBottom = window.innerHeight * 0.9; // trigger slightly earlier
+      const triggerBottom = window.innerHeight * 0.9; 
       images.forEach(img => {
         const imgTop = img.getBoundingClientRect().top;
         if (imgTop < triggerBottom) {
@@ -205,7 +243,7 @@ header p {
     }
     
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll); // trigger on load if visible
+    window.addEventListener('load', handleScroll); 
     </script>
     
 </body>
